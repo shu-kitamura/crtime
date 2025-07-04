@@ -12,8 +12,8 @@ struct Args {
 fn main() {
     let args = Args::parse();
     let created_timestamp = match metadata(args.filename) {
-        Ok(m) => match m.created() {
-            Ok(st) => st,
+        Ok(metadata) => match metadata.created() {
+            Ok(system_time) => system_time,
             Err(e) => return eprintln!("{e}")
         },
         Err(e) => return eprintln!("{e}")
