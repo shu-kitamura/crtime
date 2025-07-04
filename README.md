@@ -31,7 +31,12 @@ Options:
 ## Example
 
 ```
-$ crtime ~/path/to/src/main.rs 
+$ crtime /path/to/src/main.rs 
 2025/03/19 21:25:47
 ```
 
+If your file system does not support creation times, the following error occurs
+```
+$ crtime /path/to/src/main.rs
+creation time is not available for the filesystem
+```
